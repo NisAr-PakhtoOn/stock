@@ -93,7 +93,7 @@ results = pull()
 st.write(results)
 
 # # creating a model
-huber = create_model()
+huber = create_model('huber')
 
 st.write(huber)
 
