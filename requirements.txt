@@ -1,4 +1,4 @@
-pycaret[full]
+pycaret
 streamlit
 datetime
 yfinance
