@@ -11,9 +11,9 @@ st.title("Stock Price Prediction App")
 # Sidebar
 st.sidebar.header("Settings")
 symbol = st.sidebar.text_input("Enter Stock Symbol (e.g., TSLA):", "TSLA")
-num_previous_data = st.sidebar.slider("Number of Previous Data Points:", 1, 1000, 10)
+num_previous_data = st.sidebar.slider("Number of Previous Data Points:", 1, 1000, 1000)
 timeframe = st.sidebar.selectbox("Select Timeframe:", ["1d","1wk", "1mo"])
-forecast = st.sidebar.slider("Future Days you want to predict:", 1, 30, 10)
+forecast = st.sidebar.slider("Future Days you want to predict:", 1, 30, 30)
 # Download stock data
 end_date = datetime.datetime.today()
 start_date = end_date - datetime.timedelta(days=num_previous_data)
@@ -91,10 +91,9 @@ results = pull()
 st.write(results)
 
 # # creating a model
-# huber = automl(optimize='MAE')
-# huber = create_model('huber')
+huber = automl(optimize='MAE')
 
-st.write(create_model('huber'))
+st.write(huber)
 
 close_pred = predict_model(Close, data=test)
 
