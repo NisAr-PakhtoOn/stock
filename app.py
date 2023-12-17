@@ -92,9 +92,9 @@ st.write(results)
 
 # # creating a model
 # huber = automl(optimize='MAE')
-huber = create_model('huber')
+# huber = create_model('huber')
 
-st.write(huber)
+st.write(create_model('huber'))
 
 close_pred = predict_model(Close, data=test)
 
