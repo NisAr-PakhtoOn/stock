@@ -5,6 +5,8 @@ import datetime
 import yfinance as yf
 import matplotlib.pyplot as plt
 import plotly.graph_objs as go
+# Specify a font that is available on your system
+plt.rcParams['font.sans-serif'] = 'DejaVu Sans'
 
 st.title("Stock Price Prediction App")
 
