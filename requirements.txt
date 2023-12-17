@@ -1,0 +1,5 @@
+scikit-learn==1.0.0
+pycaret
+streamlit
+datetime
+yfinance
