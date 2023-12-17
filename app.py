@@ -91,7 +91,8 @@ results = pull()
 st.write(results)
 
 # # creating a model
-huber = automl(optimize='MAE')
+# huber = automl(optimize='MAE')
+huber = create_model('huber')
 
 st.write(huber)
 
