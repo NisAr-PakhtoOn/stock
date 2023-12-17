@@ -83,15 +83,18 @@ train = data[:-ema_period]
 train = train.reset_index(drop=False)
 
 # initialize setup
-Close = setup(data = train, target = 'Close',train_size = 0.99,
-              numeric_features = ['Date','Open','High','Low'], session_id = 123,n_jobs=1)
+# Close = setup(data = train, target = 'Close',train_size = 0.99,
+#               numeric_features = ['Date','Open','High','Low'], session_id = 123,n_jobs=1)
+Close = setup(data=train, target='Close', train_size=0.99, numeric_features=['Date', 'Open', 'High', 'Low'],
+              session_id=123, n_jobs=1, regression=True)
 Close = compare_models(sort = 'MAE')
 st.subheader("Trained Models")
 results = pull()
 st.write(results)
 
 # # creating a model
-huber = automl()
+# huber = automl()
+huber = create_model('huber', optimize='MAE')
 
 st.write(huber)
 
